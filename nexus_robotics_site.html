@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#101820">
+<title>Nexus Robotics | Conectando ideias. Construindo o futuro.</title>
+<style>
+:root{--bg:#101820;--panel:#17232d;--panel2:#1d2b36;--silver:#b8c5d1;--muted:#9eabb6;--green:#00e5a8;--white:#f4f7f8;--line:rgba(184,197,209,.17)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;background:var(--bg);color:var(--white);line-height:1.6}
+a{color:inherit;text-decoration:none}
+.wrap{width:min(1120px,calc(100% - 40px));margin:auto}
+header{position:sticky;top:0;z-index:10;background:rgba(16,24,32,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:850;letter-spacing:.04em}
+.logo{width:39px;height:39px;border:2px solid var(--green);border-radius:11px;display:grid;place-items:center;color:var(--green);font-size:20px;font-weight:900;box-shadow:0 0 22px #00e5a833}
+.brand span small{display:block;color:var(--silver);font-size:9px;letter-spacing:.23em;font-weight:600}
+nav{display:flex;gap:25px;color:var(--silver);font-size:13px}
+nav a:hover,.text-link:hover{color:var(--green)}
+.menu{display:none;background:none;border:1px solid var(--line);color:white;padding:8px 11px;border-radius:8px}
+.hero{padding:100px 0 86px;position:relative;overflow:hidden;background:radial-gradient(ellipse at 78% 40%,#00e5a817,transparent 34%),linear-gradient(135deg,#101820 30%,#14232b)}
+.hero:after{content:"";position:absolute;width:420px;height:420px;border:1px solid #00e5a822;border-radius:50%;right:-110px;top:35px;box-shadow:0 0 0 45px #00e5a808,0 0 0 90px #00e5a805}
+.eyebrow{color:var(--green);font-size:11px;letter-spacing:.24em;font-weight:800;text-transform:uppercase}
+h1{font-size:clamp(42px,6vw,70px);line-height:1.04;letter-spacing:-.045em;max-width:730px;margin:18px 0 22px}
+h1 em{font-style:normal;color:var(--green)}
+.hero p{max-width:610px;color:var(--silver);font-size:17px}
+.actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:32px}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 21px;border-radius:8px;font-weight:800;font-size:13px;border:1px solid var(--green);transition:.2s}
+.btn.primary{background:var(--green);color:#081711}
+.btn.primary:hover{background:#52f3c6;transform:translateY(-2px)}
+.btn.secondary{color:var(--white);border-color:#71808c}
+.btn.secondary:hover{border-color:var(--green);color:var(--green)}
+.hero-note{margin-top:45px;color:#82919c;font-size:11px;letter-spacing:.12em}
+section{padding:82px 0}
+.section-head{max-width:650px;margin-bottom:34px}
+h2{font-size:clamp(28px,4vw,40px);letter-spacing:-.035em;line-height:1.15;margin:10px 0 12px}
+.section-head p,.muted{color:var(--muted)}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{background:linear-gradient(145deg,var(--panel),#14202a);border:1px solid var(--line);border-radius:14px;padding:25px;transition:.22s}
+.card:hover{transform:translateY(-4px);border-color:#00e5a866}
+.icon{width:42px;height:42px;border-radius:10px;background:#00e5a817;color:var(--green);display:grid;place-items:center;font-size:20px;margin-bottom:19px}
+.card h3{font-size:17px;margin-bottom:9px}
+.card p{font-size:13px;color:var(--muted)}
+.tag{display:inline-block;color:var(--green);font-size:10px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;margin-top:18px}
+.about{background:#131e27;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:55px;align-items:center}
+.about-panel{border:1px solid var(--line);border-radius:16px;padding:28px;background:linear-gradient(140deg,#1c2b35,#111a22)}
+.stat-grid{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.stat{padding:17px;background:#101820;border-radius:10px}
+.stat strong{display:block;color:var(--green);font-size:24px}
+.stat span{font-size:11px;color:var(--muted)}
+.checks{list-style:none;margin-top:22px;display:grid;gap:12px;color:var(--silver);font-size:14px}
+.checks li:before{content:"✓";color:var(--green);font-weight:900;margin-right:10px}
+.course-meta{display:flex;gap:9px;flex-wrap:wrap;margin-top:15px}
+.pill{font-size:10px;color:var(--silver);border:1px solid var(--line);border-radius:30px;padding:5px 9px}
+.banner{padding:34px;border-radius:16px;background:linear-gradient(110deg,#00e5a81c,#1a2a34);border:1px solid #00e5a844;display:flex;align-items:center;justify-content:space-between;gap:25px}
+.banner h2{font-size:27px;max-width:570px}
+.contact{background:#131e27}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.contact-list{display:grid;gap:13px;margin-top:24px}
+.contact-item{padding:15px 17px;background:#101820;border:1px solid var(--line);border-radius:10px}
+.contact-item small{display:block;color:var(--muted);font-size:10px;text-transform:uppercase;letter-spacing:.13em}
+.contact-item strong{color:var(--silver);font-size:14px;overflow-wrap:anywhere}
+.disclaimer{font-size:11px;color:#82919c;margin-top:20px}
+footer{padding:25px 0;border-top:1px solid var(--line);color:#82919c;font-size:11px}
+.footer-row{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+@media(max-width:760px){nav{display:none;position:absolute;top:76px;left:0;right:0;background:#101820;padding:20px;flex-direction:column;border-bottom:1px solid var(--line)}nav.open{display:flex}.menu{display:block}.grid{grid-template-columns:1fr 1fr}.about-grid,.contact-grid{grid-template-columns:1fr}.hero{padding:75px 0 65px}.banner{align-items:flex-start;flex-direction:column}}
+@media(max-width:520px){.grid{grid-template-columns:1fr}.wrap{width:min(100% - 30px,1120px)}section{padding:65px 0}.hero p{font-size:15px}}
+</style>
+</head>
+<body>
+<header>
+ <div class="wrap nav">
+  <a class="brand" href="#inicio"><span class="logo">N</span><span>NEXUS ROBOTICS<small>TECNOLOGIA & EDUCAÇÃO</small></span></a>
+  <nav id="nav"><a href="#sobre">A instituição</a><a href="#cursos">Cursos</a><a href="#diferenciais">Diferenciais</a><a href="#contato">Contato</a></nav>
+  <button class="menu" id="menu" aria-label="Abrir menu">☰</button>
+ </div>
+</header>
+<main>
+<section class="hero" id="inicio">
+ <div class="wrap">
+  <div class="eyebrow">Aprenda. Crie. Automatize.</div>
+  <h1>O futuro não espera.<br><em>Construa o seu.</em></h1>
+  <p>Aprenda robótica, programação e automação com uma formação voltada à prática, à criatividade e aos desafios do mundo tecnológico.</p>
+  <div class="actions"><a class="btn primary" href="#cursos">Conheça os cursos <span aria-hidden="true">&nbsp;↗</span></a><a class="btn secondary" href="#contato">Fale com a equipe</a></div>
+  <div class="hero-note">CONECTANDO IDEIAS. CONSTRUINDO O FUTURO.</div>
+ </div>
+</section>
+<section id="sobre">
+ <div class="wrap about-grid">
+  <div><div class="eyebrow">Quem somos</div><h2>Tecnologia que transforma ideias em possibilidades.</h2>
+   <p class="muted">A Nexus Robotics é uma instituição fictícia de ensino tecnológico criada para aproximar pessoas da robótica e da automação. Nossa proposta combina fundamentos técnicos, experimentação e desenvolvimento de projetos.</p>
+   <ul class="checks"><li>Aprendizagem prática e colaborativa</li><li>Projetos aplicados a situações reais</li><li>Incentivo à inovação e à criatividade</li><li>Responsabilidade e sustentabilidade tecnológica</li></ul>
+  </div>
+  <div class="about-panel"><div class="eyebrow">Nossa essência</div><h3 style="font-size:23px;margin:12px 0">Conhecimento em movimento.</h3><p class="muted">Acreditamos que aprender tecnologia é colocar a mão na massa: testar, errar, ajustar e transformar conceitos em soluções.</p>
+   <div class="stat-grid"><div class="stat"><strong>01</strong><span>Inovação como princípio</span></div><div class="stat"><strong>02</strong><span>Prática como método</span></div><div class="stat"><strong>03</strong><span>Colaboração como força</span></div><div class="stat"><strong>04</strong><span>Futuro como direção</span></div></div>
+  </div>
+ </div>
+</section>
+<section id="cursos">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Formação</div><h2>Conhecimento para tirar projetos do papel.</h2><p>Trilhas propostas para desenvolver habilidades em eletrônica, programação, sistemas automatizados e robótica.</p></div>
+  <div class="grid">
+   <article class="card"><div class="icon">⌘</div><h3>Robótica Básica</h3><p>Conheça componentes, circuitos e os princípios para montar seus primeiros projetos robóticos.</p><div class="course-meta"><span class="pill">40 horas</span><span class="pill">Iniciante</span></div></article>
+   <article class="card"><div class="icon">⌁</div><h3>Automação com Arduino</h3><p>Programe placas, conecte sensores e desenvolva sistemas automatizados.</p><div class="course-meta"><span class="pill">60 horas</span><span class="pill">Prático</span></div></article>
+   <article class="card"><div class="icon">⚙</div><h3>Automação Industrial</h3><p>Explore processos, controle e conceitos usados em ambientes industriais.</p><div class="course-meta"><span class="pill">80 horas</span><span class="pill">Intermediário</span></div></article>
+   <article class="card"><div class="icon">⌨</div><h3>Programação para Robótica</h3><p>Desenvolva lógica e código para controlar dispositivos e resolver desafios.</p><div class="course-meta"><span class="pill">50 horas</span><span class="pill">Fundamentos</span></div></article>
+   <article class="card"><div class="icon">◎</div><h3>IA e Robótica</h3><p>Uma introdução à integração entre inteligência artificial, sensores e sistemas robóticos.</p><div class="course-meta"><span class="pill">70 horas</span><span class="pill">Exploratório</span></div></article>
+   <article class="card"><div class="icon">＋</div><h3>Aprender fazendo</h3><p>Atividades em equipe, protótipos e desafios para aplicar o conteúdo de cada trilha.</p><div class="course-meta"><span class="pill">Projetos</span><span class="pill">Colaboração</span></div></article>
+  </div>
+  <p class="disclaimer">As cargas horárias e descrições acima são propostas ilustrativas para o projeto escolar e podem ser ajustadas.</p>
+ </div>
+</section>
+<section class="about" id="diferenciais">
+ <div class="wrap">
+  <div class="section-head"><div class="eyebrow">Por que Nexus?</div><h2>Mais do que aprender tecnologia: experimentar possibilidades.</h2></div>
+  <div class="grid">
+   <article class="card"><div class="icon">▣</div><h3>Laboratórios</h3><p>Espaços planejados para atividades com kits de robótica, sensores, motores e ferramentas.</p></article>
+   <article class="card"><div class="icon">↗</div><h3>Projetos práticos</h3><p>Desafios que estimulam raciocínio lógico, criatividade e resolução de problemas.</p></article>
+   <article class="card"><div class="icon">◇</div><h3>Impacto responsável</h3><p>Reutilização de componentes, descarte correto de eletrônicos e incentivo à inclusão.</p></article>
+  </div>
+ </div>
+</section>
+<section>
+ <div class="wrap"><div class="banner"><div><div class="eyebrow">Dê o próximo passo</div><h2>Uma ideia pode ser o começo de uma grande inovação.</h2><p class="muted">Conheça nossa proposta de formação e descubra por onde começar.</p></div><a class="btn primary" href="#contato">Entre em contato ↗</a></div></div>
+</section>
+<section class="contact" id="contato">
+ <div class="wrap contact-grid">
+  <div><div class="eyebrow">Fale com a Nexus</div><h2>Vamos construir o futuro juntos?</h2><p class="muted">Entre em contato para conhecer a proposta da instituição e nossos cursos.</p></div>
+  <div class="contact-list">
+   <a class="contact-item" href="mailto:nexusrobotics@empreendimentos.com"><small>E-mail</small><strong>nexusrobotics@empreendimentos.com</strong></a>
+   <a class="contact-item" href="https://www.instagram.com/nexus_robotics/" target="_blank" rel="noopener"><small>Instagram</small><strong>@nexus_robotics ↗</strong></a>
+   <a class="contact-item" href="https://www.tiktok.com/@nexus_robotics" target="_blank" rel="noopener"><small>TikTok</small><strong>@nexus_robotics ↗</strong></a>
+   <div class="contact-item"><small>WhatsApp demonstrativo</small><strong>(31) 90000-0000</strong></div>
+  </div>
+ </div>
+ <div class="wrap"><p class="disclaimer">Projeto acadêmico fictício. Dados de contato, cursos, estrutura e condições comerciais são demonstrativos. Não representam uma instituição real nem certificação oficial.</p></div>
+</section>
+</main>
+<footer><div class="wrap footer-row"><span>© 2026 Nexus Robotics — Projeto acadêmico.</span><span>Conectando ideias. Construindo o futuro.</span></div></footer>
+<script>
+const menu=document.getElementById('menu'),nav=document.getElementById('nav');
+menu.addEventListener('click',()=>nav.classList.toggle('open'));
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));
+</script>
+</body>
+</html>
